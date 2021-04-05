@@ -1,0 +1,30 @@
+﻿<Window x:Class="MainApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainApplication"
+        xmlns:glWpfControl="clr-namespace:OpenTK.Wpf;assembly=GLWpfControl"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1100"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" x:Name="SetTetrahedron" Click="SetTetrahedron_Click">Тетраэдр</Button>
+        <Button Grid.Column="1" x:Name="SetCube" Click="OnSetCube_Click">Гексаэдр</Button>
+        <Button Grid.Column="2" x:Name="SetOctahedron" Click="SetOctahedron_Click">Октаэдр</Button>
+        <CheckBox Grid.Column="3" x:Name="SetWired" Checked="SetWired_Checked" Unchecked="SetWired_Unchecked">Каркас</CheckBox>
+        <glWpfControl:GLWpfControl Grid.Row="1" Grid.ColumnSpan="4"
+            x:Name="OpenTkControl" />
+    </Grid>
+</Window>
